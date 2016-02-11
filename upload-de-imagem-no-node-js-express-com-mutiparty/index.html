@@ -1,0 +1,207 @@
+ <!DOCTYPE html>
+   <html lang="en">
+   <head>
+     <meta charset="utf-8">
+     <meta name="description" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>Meu Blog</title>
+     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+     <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+     <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+     <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+     <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+     <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+     <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+     <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+     <link rel="manifest" href="images/favion/manifest.json">
+ <meta name="msapplication-TileColor" content="#ffffff">
+ <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+ <meta name="theme-color" content="#ffffff">  
+ 
+     <link rel="stylesheet" href="/css/normalize.css">
+     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,400italic,300italic,500,700,900' rel='stylesheet' type='text/css'>
+     <link rel="stylesheet" href="/css/prism.css">
+     <link rel="stylesheet" href="/css/style.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+   </head>
+   <body>
+     <header class="header">
+       <div class="header-bios">
+         <a href="/"><img src="/images/perfil.jpg" alt="" class="header-avatar"></a>
+          <h1>Jeftar Mascarenhas</h1>
+           <h4>Front-end Software Engineer<br/>
+             <strong>I love JavaScript, NodeJS and Open Source</strong>
+           </h4>
+       </div><!--/div img title bio-->
+       <nav class="header-navbar">
+         <ul>
+           <li><a href="/" title="home page">Home</a></li>
+           <li><a href="/" title="">Posts</a></li>
+           <li><a href="/about/" title="">About</a></li>
+         </ul>
+       </nav><!--/navbar-->
+       <div class="social">
+         <ul>
+           <li><a href="http://www.github.com/jefter" target="_blank"><i class="fa fa-github-square fa-3x"></i></a></li>
+           <li><a href="http://www.github.com/jefter" target="_blank"><i class="fa fa-twitter-square fa-3x"></i></a></li>
+           <li><a href="http://www.github.com/jefter" target="_blank"><i class="fa fa-facebook-official fa-3x"></i></a></li>
+         </ul>
+       </div><!--/social-->
+     </header>    <section class="content">
+    <article>
+      <h1>Upload de imagem no Node.js(Express) com Mutiparty</h1>
+      <time datetime="October 3, 2015">October 3, 2015</time>
+      <ul class="post-tags">
+          <li>
+            <a href="/tags/mongodb.html" title="Posts sobre mongodb">mongodb</a>
+          </li>
+          <li>
+            <a href="/tags/express.html" title="Posts sobre express">express</a>
+          </li>
+          <li>
+            <a href="/tags/angular.html" title="Posts sobre angular">angular</a>
+          </li>
+          <li>
+            <a href="/tags/nodejs.html" title="Posts sobre nodejs">nodejs</a>
+          </li>
+          <li>
+            <a href="/tags/javascript.html" title="Posts sobre javascript">javascript</a>
+          </li>
+      </ul>
+      <div class="post-body">
+        <p>Olá Pessoal, esse é um post pequeno e sem rodeios como quase todos os posts que irei fazer em meu blog.</p>
+<p>Você vai precisar instalar apenas o Express e o modulo que vamos usar para fazer o upload de forma simples que é o Multparty.</p>
+<h3 id="configura-o-de-ambiente">Configuração de ambiente</h3>
+<p>&quot;Suponho que você tenha o node e npm instalado e tenha uma noção básica em desenvolvimento com NodeJS&quot;.</p>
+<ol>
+<li>Crie uma pasta para seu projeto com o nome que quiser</li>
+<li>Dentro da pasta do seu projeto crie as pastas public, imagem e o arquivo app.js</li>
+<li>dentro da pasta public crie um arquivo index.html,uma pasta partials e um arquivo success-upload.html</li>
+</ol>
+<h3 id="instal-o-dos-modulos">Instalção dos modulos</h3>
+<p>Crie seu arquivo package.json você pode usar o comando npm init no terminal para criar-lo. Responda as pergundas no terminal</p>
+<pre>
+    <code class="language-markup">
+
+    </code>
+</pre>
+**package**
+<pre>
+    <code class="language-javascript">
+        {
+          "name": "upload-img",
+          "version": "0.0.1",
+          "description": "test upload image nodejs",
+          "main": "index.js",
+          "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+          },
+          "author": "jeftar mascarenhas",
+          "license": "ISC",
+          "dependencies": {
+            "body-parser": "^1.14.1",
+            "express": "^4.13.3",
+            "multiparty": "^4.1.2"
+          }
+        }
+
+    </code>
+</pre>
+
+<p><strong>Express</strong></p>
+<pre>
+    <code class="language-javascript">
+        $ npm express --save
+    </code>
+</pre>
+
+<p><strong>multiparty</strong></p>
+<pre>
+    <code class="language-javascript">
+        $ npm multiparty --save
+    </code>
+</pre>
+
+<p>Para simplificar eu fiz o código todo no arquivo app.js pois é pequeno, quando for utiliza-lo em produção modularize o código.</p>
+<h3 id="configura-o-do-arquivo-app-js">Configuração do arquivo app.js</h3>
+<pre>
+    <code class="language-javascript">
+//
+var express = require('express'); //módulo do express
+var app = express() // instancia do express
+var multiparty = require('multiparty') //multipart para fazer o parse do form
+var fs = require('fs'); // file system módulo que já vem com o node
+
+//Seta a porta: http://localhost:3000
+app.set('port', process.env.PORT || 3000);
+
+//Busca o index na pasta public
+app.use(express.static(__dirname + '/public'));
+
+//Essa rota só funciona se eu não adicionar o arquivo index.html na pasta public
+app.get('/',function (req, res) {
+    res.send('teste');
+});
+
+//Rota que o action do formulário ira utilizar.
+app.post('/images/upload', function(req, res){
+
+    //Validação da rota e do método utilizado
+    if(req.url === '/images/upload' && req.method === 'POST'){
+
+           // parse a file upload
+        var form = new multiparty.Form();
+
+        form.parse(req, function(err, fields, files){
+            var img = files.images[0];
+
+           fs.readFile(img.path, function(err, data){
+
+            //var extensaoImg = img.originalFilename.substr(img.originalFilename.length - 4);
+            //var path = './public/img/imoveis/'+img.originalFilename.replace(extensaoImg, '_'+contador+extensaoImg);
+            var path = './public/images/upload/'+img.originalFilename;
+
+            // console.log(path.substr(path.length - 4));
+
+            fs.writeFile(path, data, function(error){
+             if(error){ 
+              console.log(error);
+             }else{
+              res.sendFile(__dirname + '/public/partials/upload-images-success.html');
+             }
+            });
+
+           });            
+
+        });
+
+        return;
+    }
+});
+
+
+app.use('*', function(req, res){
+    res.status(404);
+    res.send('Error 404 - Page Not Found');
+});
+
+app.listen(app.get('port'), function(){
+    console.log('Server Started');
+});
+    </code>
+</pre>
+
+      </div>
+    </article>
+  </section>
+    <footer class="footer">
+          made with <a href="http://www.metalsmith.io/">metalsmith</a>
+        </footer>
+        <script src="/js/prism.js"></script>
+      </body>
+    </html>
