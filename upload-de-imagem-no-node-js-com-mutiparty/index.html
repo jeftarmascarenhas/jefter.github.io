@@ -24,35 +24,53 @@
  <meta name="theme-color" content="#ffffff">  
  
      <link rel="stylesheet" href="/css/normalize.css">
-     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,400italic,300italic,500,700,900' rel='stylesheet' type='text/css'>
+     <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,400italic,300italic,500,700,900' rel='stylesheet' type='text/css'> -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
      <link rel="stylesheet" href="/css/prism.css">
      <link rel="stylesheet" href="/css/style.css">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
    </head>
    <body>
-     <header class="header">
-       <div class="header-bios">
-         <a href="/"><img src="/images/perfil.jpg" alt="" class="header-avatar"></a>
-          <h1>Jeftar Mascarenhas</h1>
-           <h4>Front-end Software Engineer<br/>
-             <strong>I love JavaScript, NodeJS and Open Source</strong>
-           </h4>
-       </div><!--/div img title bio-->
-       <nav class="header-navbar">
-         <ul>
-           <li><a href="/" title="home page">Home</a></li>
-           <li><a href="/" title="">Posts</a></li>
-           <li><a href="/about/" title="">About</a></li>
-         </ul>
-       </nav><!--/navbar-->
-       <div class="social">
-         <ul>
-           <li><a href="http://www.github.com/jefter" target="_blank"><i class="fa fa-github-square fa-3x"></i></a></li>
-           <li><a href="http://www.github.com/jefter" target="_blank"><i class="fa fa-twitter-square fa-3x"></i></a></li>
-           <li><a href="http://www.github.com/jefter" target="_blank"><i class="fa fa-facebook-official fa-3x"></i></a></li>
-         </ul>
-       </div><!--/social-->
-     </header>    <section class="content">
+ <section>
+ 
+  <header class="header">
+  <div class="header-bios">
+      <a href="/"><img src="/images/perfil.jpg" alt="" class="header-avatar"></a>
+       <h1>Jeftar Mascarenhas</h1>
+        <h4> 
+         Desenvolvedor web apaixonado por UI Design e Front-end. Estudando a Stack MEAN e Back-end nas horas vagas.
+        </h4>
+ </div>
+ <nav class="header-navbar">
+  <ul>
+    <li class=""><a href="/" title="">Posts</a></li>
+    <li class=""><a href="/about/" title="">About</a></li>
+ </ul>
+ </nav><!--/navbar-->  
+ <div class="social">
+  <ul>
+    <li>
+      <a href="http://www.github.com/jefter" target="_blank">
+       <i class="fa fa-github-square fa-lg"></i>
+     </a>
+   </li>
+    <li>
+      <a href="http://www.github.com/jefter" target="_blank">
+       <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="http://www.github.com/jefter" target="_blank">
+       <i class="fa fa-facebook-official fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="http://www.github.com/jefter" target="_blank">
+       <i class="fa fa-behance-square fa-lg"></i>
+      </a>
+    </li>
+  </ul>
+ </div>
+ </header>    <section class="content">
     <article>
       <h1>Upload de imagem no Node.js com Mutiparty</h1>
       <time datetime="October 3, 2015">October 3, 2015</time>
@@ -205,10 +223,37 @@ app.listen(app.get('port'), function(){
 
       </div>
     </article>
+
+<footer>
+  <div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//jeftar.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</footer>
   </section>
     <footer class="footer">
-          made with <a href="http://www.metalsmith.io/">metalsmith</a>
+          By Jeftar Mascarenhas
         </footer>
+  </section>
         <script src="/js/prism.js"></script>
+        <script id="dsq-count-scr" src="//jeftar.disqus.com/count.js" async></script>
       </body>
     </html>
